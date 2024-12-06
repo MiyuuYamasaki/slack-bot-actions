@@ -36,27 +36,27 @@ const client = new WebClient(SLACK_TOKEN);
             type: 'mrkdwn',
             text: `業務連絡スレッド ${formattedDate}`,
           },
-          accessory: {
-            type: 'buttons',
-            elements: [
-              {
-                type: 'button',
-                text: {
-                  type: 'plain_text',
-                  text: '本社勤務',
-                },
-                action_id: 'button_office', // ボタンの識別子
+        },
+        {
+          type: 'actions', // ボタンを含むブロック
+          elements: [
+            {
+              type: 'button',
+              text: {
+                type: 'plain_text',
+                text: '本社勤務',
               },
-              {
-                type: 'button',
-                text: {
-                  type: 'plain_text',
-                  text: '在宅勤務',
-                },
-                action_id: 'button_remote', // ボタンの識別子
+              action_id: 'button_office', // ボタンの識別子
+            },
+            {
+              type: 'button',
+              text: {
+                type: 'plain_text',
+                text: '在宅勤務',
               },
-            ],
-          },
+              action_id: 'button_remote', // ボタンの識別子
+            },
+          ],
         },
       ],
     });
