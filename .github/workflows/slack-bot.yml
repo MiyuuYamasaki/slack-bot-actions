@@ -3,7 +3,8 @@ name: Slack Bot
 # 定期実行スケジュール
 on:
   schedule:
-    - cron: '0 23 * * *' # UTCの23時（日本時間: 8時）
+    - cron: '0 23 * * *' # 定期実行
+  workflow_dispatch: # 手動で実行できるようにする
 
 jobs:
   send_slack_message:
