@@ -23,7 +23,7 @@ function getFormattedDate() {
 const client = new WebClient(SLACK_TOKEN);
 
 // ボタン付きメッセージ
-(async () => {
+async function sendInteractiveMessage() {
   try {
     const formattedDate = getFormattedDate(); // 当日の日付を取得
     const result = await client.chat.postMessage({
@@ -64,4 +64,6 @@ const client = new WebClient(SLACK_TOKEN);
   } catch (error) {
     console.error('Error sending message: ', error);
   }
-})();
+}
+
+sendInteractiveMessage(); // ボタン付きメッセージ送信
